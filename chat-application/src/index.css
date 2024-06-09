@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: "Calibri";
+}
+
+body {
+    background-color: rgb(34, 40, 49);
+}
+
+.title {
+    display: flex;
+    background-color: rgb(118, 171, 174);
+    justify-content: center;
+    padding: 20px;
+}
+
+.title h2 {
+    font-family: "Calibri";
+    color: rgb(238, 238, 238);
+    font-size: 30px;
+}
+
+.message-list {
+    list-style: none;
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.message {
+    display: flex;
+    flex-direction: column;
+    gap: .3rem
+}
+
+.sender {
+    font-size: 17px;
+    color: rgb(118, 171, 174);
+    padding-left: .5rem;
+}
+
+.text {
+    font-size: 22px;
+    padding: .7rem  1rem;
+    background-color: rgb(49, 54, 63);
+    width: fit-content;
+    color: rgb(238, 238, 238);
+    border-radius: 1.5rem;
+}
+
+.message-bar {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-self: flex-end;
+}
+
+.input {
+    width: 90vw;
+    height: 4rem;
+    padding-left: 1.5rem;
+    font-size: 22px;
+    background-color:  rgb(49, 54, 63);
+    border: 0;
+}
+
+.input:focus {
+    outline-width: 0;
+}
+
+.send {
+    background-color: rgb(118, 171, 174);
+    width: 10vw;
+    border: 0;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.send:hover {
+    background-color: rgb(238, 238, 238);
+    color: rgb(118, 171, 174);
+}
