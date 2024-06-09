@@ -1,5 +1,17 @@
+import React, {useEffect, useRef} from 'react';
 
 function MessageList({ messageList }) {
+
+    const messagesEndRef = useRef(null);
+
+    function scrollToBottom() {
+        messagesEndRef.current?.scrollIntoView({ behaviour:"smooth" });
+    }
+
+    useEffect(() => {
+        scrollToBottom();
+    }, [messageList]);
+
     console.log("works");
     return(
         <ul className="message-list">
@@ -9,6 +21,7 @@ function MessageList({ messageList }) {
                     <div className="text">{m.text}</div>
                 </li>
             ))}
+            <div ref={messagesEndRef} />
         </ul>
     );
 
