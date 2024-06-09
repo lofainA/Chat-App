@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Title from "./components/Title";
 import MessageList from "./components/MessageList";
 import SendMessageBar from "./components/SendMessageBar";
+import Login from "./components/Login";
 
 
 const dummyData = [
@@ -18,12 +19,19 @@ const dummyData = [
 function App() {
 
   const [messages, setMessages] = useState(dummyData);
+  const [user, setUser] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    console.log("I am" + user);
+  }, [user]);
 
   return(
     <div className="page">
-      <Title />
-      <MessageList messageList={messages}/>
-      <SendMessageBar />
+      {isLoggedIn ? <><Title setIsLoggedIn={setIsLoggedIn}/>
+                    <MessageList messageList={messages}/>
+                    <SendMessageBar messages={messages} setMessage={setMessages} user={user}/></>
+      : <Login users={user} setUsers={setUser} setIsLoggedIn={setIsLoggedIn}/>}
     </div>
   );
 }
